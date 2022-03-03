@@ -1,7 +1,24 @@
+'use strict';
+
+module.exports.hello = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'Go Serverless v1.0! Your function executed successfully!',
+        input: event,
+      },
+      null,
+      2
+    ),
+  };
+
+  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
+  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+};
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
-
 /**
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
@@ -23,9 +40,7 @@ const credentials = {
   redirect_uris: ["https://obitown.github.io/meet/"],
   javascript_origins: ["https://obitown.github.io", "http://localhost:3000"],
 };
-
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
-
 const oAuth2Client = new google.auth.OAuth2(
   client_id,
   client_secret,
@@ -40,7 +55,6 @@ const oAuth2Client = new google.auth.OAuth2(
  *
  */
 module.exports.getAuthURL = async () => {
-
   /**
    *
    * Scopes array passed to the `scope` option. Any scopes passed must be enabled in the
