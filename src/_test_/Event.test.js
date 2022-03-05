@@ -15,7 +15,7 @@ describe('<EventList /> component', () => {
         expect(EventWrapper.find('.event')).toHaveLength(1);
     });
 
-    test("render the location", () => {
+    test("show the location of event", () => {
         expect(EventWrapper.find(".location")).toHaveLength(1);
     });
 
