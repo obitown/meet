@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
@@ -6,17 +6,21 @@ import NumberOfEvents from './NumberOfEvents';
 
 
 
-function App() {
+class App extends Component {
+  state = {
+    events: []
+  }
 
-  return (
+  render() {
 
-
-    <div className="App">
-      <EventList />
-      <CitySearch />
-      <NumberOfEvents />
-    </div>
-  );
+    return (
+      <div className="App">
+        <EventList events={this.state.events} />
+        <CitySearch />
+        <NumberOfEvents />
+      </div>
+    )
+  }
 }
 
 export default App;
