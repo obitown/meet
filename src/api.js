@@ -18,6 +18,7 @@ const checkToken = async (accessToken) => {
     return result;
 };
 
+
 export const getEvents = async () => {
     NProgress.start();
 

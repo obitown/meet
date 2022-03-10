@@ -19,7 +19,6 @@ describe('<EventList /> component', () => {
         expect(EventWrapper.find(".location")).toHaveLength(1);
     });
 
-
 })
 
 export default Event;
