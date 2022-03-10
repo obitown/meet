@@ -2,9 +2,8 @@ import React, { Component } from "react";
 
 class Event extends Component {
     state = {
-        event: {},
         collapsed: true,
-    }
+    };
 
     handleClick = () => {
         this.setState({
@@ -15,33 +14,30 @@ class Event extends Component {
     render() {
         const { event } = this.props;
         const { collapsed } = this.state;
-
-
         return (
             <div className="event">
-                <div className="summary">{event.summary}</div>
-                <div className="event-body">
-                    <p className="start-date">
-                        {event.start.dateTime} ({event.start.timeZone})
-                    </p>
+                <h2 className="summary">{event.summary}</h2>
+                {/* <p className="start-date">
+                    {event.start.dateTime}
+                </p> */}
 
-                    <p className="location">
-                        @{event.summary} | {event.location}
-                    </p>
+                <p className="location">
+                    {event.location}
+                </p>
 
-                    {!collapsed && (
-                        <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
-                            <h6 className="about">About Event</h6>
-                            <p className="event-description">{event.description}</p>
-                        </div>
-                    )}
-                    <button
-                        className={`${collapsed ? "show" : "hide"}-details`}
-                        onClick={this.handleClick}
-                    >
-                        {collapsed ? "Show Details" : "Hide-Details"}
-                    </button>
-                </div>
+                <button
+                    variant="outline-info"
+                    className={`details-button ${collapsed ? "show" : "hide"}-details`}
+                    onClick={this.handleClick}
+                >
+                    {collapsed ? "Show Details" : "Hide Details"}
+                </button>
+
+                {!collapsed && (
+                    <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
+                        <p className="event-description">{event.description}</p>
+                    </div>
+                )}
             </div>
         );
     }

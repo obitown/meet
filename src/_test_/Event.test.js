@@ -19,6 +19,10 @@ describe('<EventList /> component', () => {
         expect(EventWrapper.find(".location")).toHaveLength(1);
     });
 
+    // test("Render date and timezone", () => {
+    //     expect(EventWrapper.find(".start-date")).toHaveLength(1);
+    // });
+
 })
 
 export default Event;
