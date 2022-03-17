@@ -46,7 +46,7 @@ class App extends Component {
       {
         numberOfEvents,
       },
-      this.updateEvents(this.state.location, numberOfEvents)
+      this.updateEvents(this.state.locations, numberOfEvents)
     );
   };
   render() {
