@@ -1,14 +1,22 @@
+import { mount, shallow } from "enzyme";
 import { loadFeature, defineFeature } from "jest-cucumber";
+
+import App from "../App"
+
 
 const feature = loadFeature('./src/features/showHideAnEventsDetails.feature');
 
 defineFeature(feature, test => {
+
     test('An event element is collapsed by default', ({ given, when, then }) => {
+
         given('the user has searched for events by city', () => {
+
 
         });
 
         when('user has list of suggested events', () => {
+
 
         });
 
