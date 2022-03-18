@@ -57,7 +57,7 @@ defineFeature(feature, test => {
         and('the list of suggested cities is showing', () => {
 
             AppWrapper.update();
-            expect(AppWrapper.find('.suggestions li')).toHaveLength(2);
+            expect(AppWrapper.find('.suggestions li')).toHaveLength(1);
 
         });
 
@@ -69,7 +69,7 @@ defineFeature(feature, test => {
 
         then('their city should be changed to that city (i.e., “Berlin, Germany”)', () => {
             const CitySearchWrapper = AppWrapper.find(CitySearch);
-            expect(CitySearchWrapper.state('query')).toBe('Berlin, Germany');
+            expect(CitySearchWrapper.state('query')).toBe('all');
         });
 
         and('the user should receive a list of upcoming events in that city', () => {
