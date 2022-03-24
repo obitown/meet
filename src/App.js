@@ -14,7 +14,7 @@ class App extends Component {
     events: [],
     locations: [],
     currentLocation: "all",
-    numberOfEvents: 15,
+    numberOfEvents: 32,
   }
 
   componentDidMount() {
@@ -49,6 +49,7 @@ class App extends Component {
       this.updateEvents(this.state.locations, numberOfEvents)
     );
   };
+
   render() {
     const { events, locations, numberOfEvents } = this.state;
     return (
