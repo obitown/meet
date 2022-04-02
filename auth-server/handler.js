@@ -142,6 +142,7 @@ module.exports.getCalendarEvents = event => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*"
+
         },
         body: JSON.stringify({ events: results.data.items })
       };
@@ -152,7 +153,8 @@ module.exports.getCalendarEvents = event => {
       return {
         statusCode: 500,
         headers: {
-          "Access-Control-Allow-Origin": "*"
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(error),
       };
