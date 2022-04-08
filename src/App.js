@@ -67,22 +67,20 @@ class App extends Component {
     const { events, locations, numberOfEvents, offlineText } = this.state;
     return (
       <div className="App">
+        <OfflineAlert text={offlineText} />
         <CitySearch
           locations={locations}
           updateEvents={this.updateEvents}
-        />
-        <EventList
-          events={events}
-          numberOfEvents={numberOfEvents}
         />
         <NumberOfEvents
           updateNumberOfEvents={(number) => {
             this.updateNumberOfEvents(number);
           }}
         />
-
-        <OfflineAlert text={offlineText} />
-
+        <EventList
+          events={events}
+          numberOfEvents={numberOfEvents}
+        />
       </div>
     )
   }
