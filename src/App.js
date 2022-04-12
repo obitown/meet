@@ -50,17 +50,17 @@ class App extends Component {
         events.filter((event) => event.location === location);
       this.setState({
         events: locationEvents.slice(0, this.state.numberOfEvents),
-        numberOfEvents: eventCount,
+        currentLocation: location,
       });
     });
   }
 
-  updateNumberOfEvents = (numberOfEvents) => {
+  updateNumberOfEvents = (newNumberOfEvents) => {
     this.setState({
-      numberOfEvents,
+      numberOfEvents: newNumberOfEvents
     });
 
-    this.updateEvents(this.state.locations, numberOfEvents);
+    this.updateEvents(this.state.currentLocation);
 
   }
 
