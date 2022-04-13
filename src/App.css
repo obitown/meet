@@ -87,6 +87,10 @@ input[type="number"] {
   position: relative;
 }
 
+.EventList {
+  margin-top: 200px;
+}
+
 .details-btn {
   position: absolute;
   right: 5px;
