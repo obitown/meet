@@ -15,7 +15,7 @@ class App extends Component {
     events: [],
     locations: [],
     currentLocation: "all",
-    numberOfEvents: 32,
+    numberOfEvents: 15,
   }
 
   componentDidMount() {
@@ -83,14 +83,14 @@ class App extends Component {
           locations={locations}
           updateEvents={this.updateEvents}
         />
-        <EventList
-          events={events}
-          numberOfEvents={numberOfEvents}
-        />
         <NumberOfEvents
           updateNumberOfEvents={(number) => {
             this.updateNumberOfEvents(number);
           }}
+        />
+        <EventList
+          events={events}
+          numberOfEvents={numberOfEvents}
         />
       </div>
     )

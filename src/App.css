@@ -123,6 +123,9 @@ input[type="number"] {
   text-align: center;
   padding-top: 20px;
 }
+.NumberOfEvents {
+  float: right;
+}
 
 .button-wrapper {
   display: grid;
