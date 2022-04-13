@@ -117,9 +117,11 @@ input[type="number"] {
 }
 
 .numberOfEvents {
-  width: 200px;
+  display: grid;
+  width: 60px;
   margin: 20px auto;
   text-align: center;
+  padding-top: 20px;
 }
 
 .button-wrapper {
@@ -131,8 +133,9 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  position: relative;
+  margin: auto;
+  align-self: center;
 }
 
 .data-vis-wrapper {
@@ -199,8 +202,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
