@@ -30,6 +30,7 @@ class App extends Component {
         offlineText:
           'Your are currently offline. The displayed events might not be up to date.'
       });
+      alert(this.state.offlineText)
     } else {
       this.setState({
         offlineText: ''
