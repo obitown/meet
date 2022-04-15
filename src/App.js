@@ -56,16 +56,15 @@ class App extends Component {
     this.updateEvents(this.state.currentLocation);
 
   }
-
-  // updateNumberOfEvents = (numberOfEvents) => {
-  //   this.setState(
-  //     {
-  //       numberOfEvents,
-  //     },
-
-  //   );
-  //   this.updateEvents(this.state.locations, numberOfEvents)
-  // };
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(',').shift()
+      return { city, number };
+    })
+    return data;
+  }
 
   render() {
     const { events, locations, numberOfEvents, offlineText } = this.state;
