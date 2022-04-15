@@ -56,6 +56,7 @@ class App extends Component {
     this.updateEvents(this.state.currentLocation);
 
   }
+
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
