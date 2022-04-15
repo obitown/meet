@@ -6,6 +6,9 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { OfflineAlert } from './Alert'
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+} from 'recharts';
 
 
 
@@ -72,6 +75,8 @@ class App extends Component {
     return (
       <div className="App">
         <OfflineAlert text={offlineText} />
+        <h1>Meet App</h1>
+        <h4>Choose your nearest city</h4>
         <CitySearch
           locations={locations}
           updateEvents={this.updateEvents}
@@ -81,6 +86,20 @@ class App extends Component {
             this.updateNumberOfEvents(number);
           }}
         />
+        <h4>Events in each city</h4>
+        <ScatterChart
+          width={400}
+          height={400}
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}
+        >
+          <CartesianGrid />
+          <XAxis type="category" dataKey="city" name="city" />
+          <YAxis type="number" dataKey="number" name="number of events" />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Scatter data={this.getData()} fill="#8884d8" />
+        </ScatterChart>
         <EventList
           events={events}
           numberOfEvents={numberOfEvents}
