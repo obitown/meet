@@ -82,11 +82,6 @@ class App extends Component {
           locations={locations}
           updateEvents={this.updateEvents}
         />
-        <NumberOfEvents
-          updateNumberOfEvents={(number) => {
-            this.updateNumberOfEvents(number);
-          }}
-        />
         <h4>Events in each city</h4>
         <div className='data-vis-wrapper'>
 
@@ -108,6 +103,11 @@ class App extends Component {
         <EventList
           events={events}
           numberOfEvents={numberOfEvents}
+        />
+        <NumberOfEvents
+          updateNumberOfEvents={(number) => {
+            this.updateNumberOfEvents(number);
+          }}
         />
 
       </div>

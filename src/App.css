@@ -2,6 +2,10 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  
+}
+html{
+  background-color: #e9e9e9;
 }
 
 .App * {
@@ -18,6 +22,10 @@ p {
   margin: 5px 0;
 }
 
+h4, h1{
+  color: #3c0919;
+}
+
 .display-none {
   display: none;
 }
@@ -30,7 +38,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 2px solid #3c0919;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -82,16 +90,19 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 3px solid #3c0919;
   border-radius: 4px;
   position: relative;
+  background-color: #ffd1da;
+  color: #3c0919;
+  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
 .EventList {
   margin-top: 200px;
 }
 
-.details-btn {
+.details-button {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -122,13 +133,10 @@ input[type="number"] {
 
 .numberOfEvents {
   display: grid;
-  width: 60px;
+  width: 75px;
   margin: 20px auto;
   text-align: center;
   padding-top: 20px;
-}
-.NumberOfEvents {
-  float: right;
 }
 
 .button-wrapper {
